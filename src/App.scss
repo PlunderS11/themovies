@@ -63,7 +63,7 @@ iframe {
 }
 
 .container {
-    min-width: 100%;
+    max-width: 1660px;
     margin: auto;
 }
 
@@ -79,6 +79,6 @@ iframe {
     padding: 0 2rem;
 }
 
-.section_header {
+.section__header {
     @include flex(center, space-between);
 }

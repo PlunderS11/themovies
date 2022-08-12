@@ -39,11 +39,11 @@ const tmdbApi = {
         return axiosCilent.get(url, params);
     },
     credits: (cate, id) => {
-        const url = category[cate] + '/' + id + 'credits';
+        const url = category[cate] + '/' + id + '/credits';
         return axiosCilent.get(url, { params: {} });
     },
     similar: (cate, id) => {
-        const url = category[cate] + '/' + id + 'similar';
+        const url = category[cate] + '/' + id + '/similar';
         return axiosCilent.get(url, { params: {} });
     },
 };

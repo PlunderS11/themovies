@@ -1,0 +1,17 @@
+@use '../../scss/' as *;
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.section {
+    padding: 0 2rem;
+}
+
+.header {
+    @include flex(center, space-between);
+}

@@ -47,7 +47,7 @@ function HeroSlideItem({ ...props }) {
                     <h2 className={cx('title')}>{item.title}</h2>
                     <div className={cx('overview')}>{item.overview}</div>
                     <div className={cx('btn')}>
-                        <Button primary onClick={() => history.push('/movie/' + item.id)}>
+                        <Button primary onClick={() => history('/movie/' + item.id)}>
                             Watch Now
                         </Button>
                         <Button outline onClick={sendData}>

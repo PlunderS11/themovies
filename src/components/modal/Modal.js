@@ -19,7 +19,7 @@ function Modal({ ...props }) {
 export function ModalContent({ ...props }) {
     const contentRef = useRef(null);
     const closeModal = () => {
-        contentRef.current.parentNode.className = cx('content', '');
+        contentRef.current.parentNode.className = cx('modal');
         if (props.onClose) {
             props.onClose();
         }

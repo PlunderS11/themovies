@@ -1,0 +1,11 @@
+@use '../../scss/' as *;
+
+.video {
+    margin-bottom: 3rem;
+    margin-left: -100px;
+    margin-right: -100px;
+
+    .title {
+        margin-bottom: 1.5rem;
+    }
+}

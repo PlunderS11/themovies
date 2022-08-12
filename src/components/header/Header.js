@@ -1,9 +1,8 @@
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
-import { Link, NavLink } from 'react-router-dom';
-
 import logo from '../../assets/tmovie.png';
 import { useEffect, useRef } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 const headerNav = [
@@ -22,6 +21,9 @@ const headerNav = [
 ];
 function Header() {
     const headerRef = useRef(null);
+    const { pathname } = useLocation();
+
+    const active = headerNav.findIndex((e) => e.path === pathname);
     useEffect(() => {
         const shrinkHeader = () => {
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -43,13 +45,13 @@ function Header() {
                     <img src={logo} alt="" />
                     <Link to="/">PlunMy</Link>
                 </div>
-                <nav className={cx('nav')}>
+                <ul className={cx('nav')}>
                     {headerNav.map((element, i) => (
-                        <NavLink key={i} className={(nav) => cx('item', { active: nav.isActive })} to={element.path}>
-                            {element.display}
-                        </NavLink>
+                        <li key={i} className={cx(i === active ? 'active' : '')}>
+                            <Link to={element.path}>{element.display}</Link>
+                        </li>
                     ))}
-                </nav>
+                </ul>
             </div>
         </div>
     );

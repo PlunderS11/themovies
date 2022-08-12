@@ -7,12 +7,16 @@
     @include flex(center, unset);
 
     img {
-        margin-right: 10px;
-        width: 50px;
+        margin-right: -10px;
+        width: 120px;
 
         @include mobile {
             width: 30px;
             margin-right: 0;
+        }
+
+        @include tablet {
+            width: 80px;
         }
     }
 }
@@ -24,11 +28,21 @@
     left: 0;
     width: 100%;
     z-index: 99;
-    transition: height 0.3s ease, backgroud-color 0.3s ease;
+    transition: height 1s ease, backgroud-color 1s ease;
 
     &.shrink {
         height: $header-shrink-height;
         background-color: $body-bg;
+
+        .wrap {
+            transform: scale(0.5) 0.3s ease !important;
+        }
+
+        @include tablet {
+            .wrap {
+                margin-top: -20px;
+            }
+        }
     }
 }
 
@@ -49,7 +63,7 @@
         margin-left: 2rem;
     }
 
-    .item {
+    li {
         padding: 5px 0;
         font-weight: 700;
         position: relative;
@@ -60,32 +74,16 @@
             position: absolute;
             bottom: 0;
             left: 50%;
-            width: 0;
-            height: 2px;
-            background-color: $main-color;
             transform: translateX(-50%);
+            width: 0;
             transition: width 0.5s ease;
+            height: 3px;
+            background-color: $main-color;
         }
 
         &.active::after,
         &:hover::after {
             width: 100%;
-        }
-    }
-
-    @include mobile {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: $body-bg;
-        padding: 0 2rem;
-        box-shadow: $box-shadow;
-
-        @include flex(center, space-between);
-
-        & > * ~ * {
-            margin-left: 0;
         }
     }
 
