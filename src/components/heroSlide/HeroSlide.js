@@ -22,7 +22,7 @@ function HeroSlide() {
             const params = { page: 1 };
             try {
                 const response = await tmdbApi.getMoviesList(movieType.popular, { params });
-                setMoviesItem(response.results.slice(16, 20));
+                setMoviesItem(response.results.slice(0, 10));
             } catch (error) {
                 console.log('error');
             }
