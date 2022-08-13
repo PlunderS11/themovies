@@ -21,7 +21,7 @@ function HeroSlideItem({ ...props }) {
     const setModalActive = async () => {
         const videos = await tmdbApi.getVideos(category.movie, item.id);
         if (videos.results.length > 0) {
-            const videoSrc = 'http://www.youtube.com/embed/' + videos.results[0].key;
+            const videoSrc = 'https://www.youtube.com/embed/' + videos.results[0].key;
             setSrc(videoSrc);
             setActive(true);
             setId(item.id);
