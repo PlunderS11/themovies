@@ -1,11 +1,23 @@
 @use '../../scss/breakpoint' as *;
 
-.swiper-slide {
-    @include tablet {
-        width: 30%;
-    }
+.movie-list {
+    .swiper-container {
+        .swiper-wrapper {
+            .swiper-slide {
+                width: 15%;
 
-    @include mobile {
-        width: 40%;
+                @include tablet {
+                    .swiper-slide {
+                        width: 30%;
+                    }
+                }
+
+                @include mobile {
+                    .swiper-slide {
+                        width: 40%;
+                    }
+                }
+            }
+        }
     }
 }

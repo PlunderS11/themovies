@@ -1,5 +1,5 @@
 import Modal, { ModalContent } from '../../modal/Modal';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
 function TrailerModal({ ...props }) {
     const iframeRef = useRef(null);
@@ -8,10 +8,15 @@ function TrailerModal({ ...props }) {
     if (id === props.item.id) {
         isActive = true;
     }
+
+    useEffect(() => {
+        const height = (iframeRef.current.offsetWidth * 9) / 13 + 'px';
+        iframeRef.current.setAttribute('height', height);
+    }, []);
     return (
         <Modal active={isActive} id={`modal_${props.item.id}`}>
             <ModalContent>
-                <iframe src={props.src} ref={iframeRef} width="100%" height="500px" title="Trailer"></iframe>
+                <iframe src={props.src} ref={iframeRef} width="100%" title="Trailer"></iframe>
             </ModalContent>
         </Modal>
     );

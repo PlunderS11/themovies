@@ -7,8 +7,8 @@
     @include flex(center, unset);
 
     img {
-        margin-right: -10px;
-        width: 120px;
+        margin-right: 10px;
+        width: 50px;
 
         @include mobile {
             width: 30px;

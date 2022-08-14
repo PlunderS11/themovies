@@ -3,7 +3,6 @@ import styles from './Detail.module.scss';
 import classNames from 'classnames/bind';
 import tmdbApi from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
-import Button from '../button/Button';
 import CastsList from '../castsList/CastsList';
 import Video from '../video/Video';
 import MovieList from '../movieList/MovieList';
@@ -47,9 +46,9 @@ function DetailComponent({ ...props }) {
                             <div className={cx('title')}>{item.title || item.name}</div>
                             <div className={cx('genres')}>
                                 {item.genres.slice(0, 5).map((genre, i) => (
-                                    <Button key={i} outline small disabled>
+                                    <span key={i} className={cx('item')}>
                                         {genre.name}
-                                    </Button>
+                                    </span>
                                 ))}
                             </div>
                             <div className={cx('overview')}>{item.overview}</div>
@@ -64,7 +63,7 @@ function DetailComponent({ ...props }) {
                             <Video category={props.category} id={props.id} />
                         </div>
                         <div className={cx('similar', 'mb-3')}>
-                            <div className={cx('header', 'mb-3')}>
+                            <div className={cx('section', 'mb-3')}>
                                 <div style={{ fontSize: '1.8rem', fontWeight: '700' }}>Similar</div>
                                 <MovieList category={props.category} id={props.id} type="similar" />
                             </div>

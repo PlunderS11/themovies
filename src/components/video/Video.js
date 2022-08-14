@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 function Video({ ...props }) {
     const iframeRef = useRef(null);
     useEffect(() => {
-        const height = (iframeRef.current.offsetWidth * 9) / 16 + 'px';
+        const height = (iframeRef.current.offsetWidth * 9) / 13 + 'px';
         iframeRef.current.setAttribute('height', height);
     }, []);
 
